@@ -22,6 +22,7 @@ jobs:
           aws-secret-access-key: rcadLpHxJtEVXtHkPNJmCNlBHbkgA22zr0UQn6fE
           aws-region: us-east-2
           role-to-assume: arn:aws:iam::986791855712:user/ec2user
+          audience: sts.amazonaws.com
 
       - name: Add github actions IP to security group
         env:
