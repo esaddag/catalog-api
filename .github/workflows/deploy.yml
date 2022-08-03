@@ -37,9 +37,9 @@ jobs:
         run: |
           echo "$PRIVATE_KEY" > private_key.pem && chmod 600 private_key.pem
           ssh -o StrictHostKeyChecking=no -i private_key.pem ${USER_NAME}@${HOSTNAME} '
-            rm -rf /home/ubuntu/<your-repo-name>
-            git clone <your-repo-link>.git
-            cd <your-repo>
+            rm -rf /home/ubuntu/catalog-api
+            git clone https://github.com/esaddag/catalog-api.git
+            cd catalog-api
             git checkout main
             git pull origin main
             sudo chmod +x ./deploy.sh
