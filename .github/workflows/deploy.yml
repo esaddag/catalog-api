@@ -21,6 +21,7 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACESS_KEY_ID  }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_DEFAULT_REGION }}
+          role-to-assume: arn:aws:iam::986791855712:role/ec2role2
 
       - name: Add github actions IP to security group
         env:
