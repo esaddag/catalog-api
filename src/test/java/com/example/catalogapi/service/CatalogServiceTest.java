@@ -63,7 +63,7 @@ class CatalogServiceTest {
         Product testProduct = new Product();
         testProduct.setId(123L);
         Mockito.when(this.productRepository.save(any())).thenReturn(testProduct);
-        long result = catalogService.addProduct(testProduct).getId();
+        long result = catalogService.saveProduct(testProduct).getId();
         Assert.assertEquals(123, result );
     }
 
@@ -71,7 +71,7 @@ class CatalogServiceTest {
     void deleteProduct() {
         Product testProduct = new Product();
         testProduct.setId(123L);
-        Assert.assertTrue( catalogService.deleteProduct(testProduct) );
+        Assert.assertTrue( catalogService.deleteProduct(testProduct.getId()) );
     }
 
     @Test
